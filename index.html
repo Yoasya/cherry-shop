@@ -1,0 +1,96 @@
+﻿<html>
+<head>
+    <title>CHERRY?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1 class="header_main_text">CHERRY?</h1>
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="SourCherry.html">Вишня</a>
+            <a href="SweetCherry.html">Черешня</a>
+            <a href="cart.html" id="cartLink">Корзина (<span id="cartCount">0</span>)</a>
+            <a href="info.html">О нас</a>
+        </nav>
+        <img src="pics/theme.png" alt="theme" id="themeToggle"/>
+    </header>
+
+    <main class="page">
+        <div class="main_block">
+            <img src="pics/cherry.svg" class="pic" alt="icon" />
+            <div class="text">
+                <p class="main_text">CHERRY</p>
+                <p> Каждый плод — это маленькая вселенная, хранящая в себе истории дождей и летних закатов</p>
+            </div>
+        </div>
+
+        <div class="image-row">
+            <p style="font-size: 1.2rem;">SWEET</p>
+
+            <img src="pics/mne_len.jpg" alt="cherry" />
+            <img src="pics/cherries.jpg" alt="cherry" />
+            <img src="pics/cherry_glass.jpg" alt="cherry" />
+
+        </div>
+
+        <div class="image-text">
+            <p>Иногда самые странные идеи приходят в голову в самые обычные моменты. Стоит лишь остановиться и прислушаться к шуму города, чтобы заметить детали, которые обычно проходят мимо</p>
+            <p>Человеческое воображение способно создавать целые миры из одного взгляда, одного запаха или одного случайного слова, услышанного на улице</p>
+            <p>...И в этом хаосе будничного мира можно найти красоту: случайные линии на стене, отражения в лужах и смех незнакомцев — маленькие эпифании, которые делают жизнь живой</p>
+        </div>
+
+        <div class="button">
+            <a class="iksweb" href="catalog.html">Узнайте все секреты</a>
+        </div>
+
+        <div class="background_layer">
+            <p class="background_text">BLOSSOM</p>
+        </div>
+
+    </main>
+    <footer>
+        <p>© 2025 Все права не защищены. Запомните, носки пропадают не просто так, это маркетинг параллельной вселенной.</p>
+    </footer>
+
+    <script type="text/javascript">
+        //смена темы
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('themeToggle');
+
+            const savedTheme = localStorage.getItem('siteTheme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else if (savedTheme === 'light') {
+                document.body.classList.remove('dark-theme');
+            } else if (systemDark) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('siteTheme', 'dark')
+            }
+
+            themeToggle.addEventListener('click', function () {
+                if (document.body.classList.contains('dark-theme')) {
+                    document.body.classList.remove('dark-theme');
+                    localStorage.setItem('siteTheme', 'light');
+                } else {
+                    document.body.classList.add('dark-theme');
+                    localStorage.setItem('siteTheme', 'dark');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cartCount');
+
+            if (cartCountElement) {
+                cartCountElement.textContent = cart.length;
+            }
+        });
+    </script>
+</body>
+</html>

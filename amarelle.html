@@ -1,0 +1,282 @@
+﻿<html>
+<head>
+    <title>CHERRY?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+
+        const products = [
+            {
+                id: 1, name: 'Аморелль', price: 600, type: 'Вишня', image: 'pics/amarelle.webp', size: 'средний', taste: 'приятный, кисловато-сладкий', purpose: 'для потребления в свежем виде', fruit_weight: 4,
+                description: `
+                <h2>Amarelle</h2>
+                <p>Светлая королева кислых вишен, любимая шефами, кондитерами и всеми, кто ценит настоящий вкус.</p>
+                <br />
+                <h3>Описание вкуса</h3>
+                <p>Аморелль отличается светло-красной, почти прозрачной мякотью и соком — чистый цвет и аккуратная подача. Вкус — выраженно кисло-сладкий, с освежающей кислотностью и лёгкими фруктовыми нотами. Не приторная, а честная и бодрая.</p>
+                <br />
+                <h3>Особенности</h3>
+                <ul>
+                    <li>Яркий, чистый вкус без горечи</li>
+                    <li>Сохраняет кислотность после термообработки</li>
+                    <li>Идеально балансирует сладкие десерты и соусы</li>
+                </ul>
+                <br />
+                <h3>Рекомендации по использованию</h3>
+                <ul>
+                    <li>Выпечка и тарты</li>
+                    <li>Соусы к мясу и утке</li>
+                    <li>Джемы, конфитюры, компоты</li>
+                    <li>Ресторанные заготовки и авторские рецепты</li>
+                </ul>
+                <br />
+                <p>Ягоды ровные, сочные, с тонкой кожицей и аккуратной текстурой.</p>
+                <br />
+                <p>Аморелль — выбор для тех, кто работает со вкусом, а не маскирует его.</p>
+            `},
+            {
+                id: 2, name: 'Живица', price: 400, type: 'Вишня', image: 'pics/jivitsa.jpg', size: 'средний', taste: 'кисло-сладкий', purpose: 'для потребления в свежем виде', fruit_weight: 3.7,
+                description: `
+                <h2>Zhivitsa</h2>
+                <p>Вишня сорта Живица — результат селекции с акцентом на баланс вкуса и стабильность качества. Универсальный сорт, который одинаково хорошо работает и в свежем виде, и в профессиональной переработке.</p>
+                <br />
+                <h3>Описание вкуса</h3>
+                <p>Вкус кисло-сладкий, мягкий и ровный, без резкой кислоты. Сладость чистая, ненавязчивая, с лёгкой фруктовой глубиной. Такая вишня не спорит с ингредиентами блюда, а аккуратно их поддерживает.</p>
+                <br />
+                <h3>Особенности</h3>
+                <ul>
+                    <li>Сбалансированный вкус без агрессивной кислотности</li>
+                    <li>Плотная, сочная мякоть</li>
+                    <li>Хорошо переносит термообработку</li>
+                </ul>
+                <br />
+                <h3>Рекомендации по использованию</h3>
+                <ul>
+                    <li>Выпечка и начинки</li>
+                    <li>Компоты и напитки</li>
+                    <li>Соусы и заготовки</li>
+                    <li>Заморозка и промышленная переработка</li>
+                </ul>
+                <br />
+                <p>Живица — практичный и надёжный выбор для стабильного вкуса и прогнозируемого результата.</p>
+                `},
+            {
+                id: 3, name: 'Медуница', price: 700, type: 'Черешня', image: 'pics/medunitsa.jpg', size: 'крупный', taste: 'сладкий', purpose: 'для всех видов переработки', fruit_weight: 5.7,
+                description: `
+                <h2>Medunitsa</h2>
+                <p>Черешня Медуница — десертный сорт с ярким характером и выраженной натуральной сладостью. Название говорит само за себя: это ягода для тех, кто ценит мягкий, «мёдовый» профиль вкуса.</p>
+                <br />
+                <h3>Описание вкуса</h3>
+                <p>Вкус насыщенно сладкий, с минимальной кислотностью и тёплыми фруктовыми нотами. Мякоть сочная, плотная, тающая, без водянистости. Послевкусие долгое и округлое.</p>
+                <br />
+                <h3>Особенности</h3>
+                <ul>
+                    <li>Высокая естественная сладость</li>
+                    <li>Плотная текстура и сочность</li>
+                    <li>Привлекательный внешний вид ягод</li>
+                </ul>
+                <br />
+                <h3>Рекомендации по использованию</h3>
+                <ul>
+                    <li>Свежая подача и фруктовые витрины</li>
+                    <li>Десерты и кондитерские изделия</li>
+                    <li>Фруктовые салаты</li>
+                    <li>Премиальная розница и HoReCa</li>
+                </ul>
+                <br />
+                <p>Медуница — черешня, которая работает как самостоятельный акцент и не требует усилителей вкуса.</p>
+                `},
+            {
+                id: 4, name: 'Звездочка', price: 400, type: 'Вишня', image: 'pics/zvezdochka.jpg', size: 'средний', taste: 'освежающий, сладкий, с приятной кислинкой', purpose: 'для варенья, компотов', fruit_weight: '4-5',
+                description: `
+                <h2>Zvezdochka</h2>
+                <p>Вишня сорта Звёздочка — классический кислый сорт с ярким, узнаваемым вкусом. Часто используется в переработке и кулинарии благодаря своей стабильности и выраженному характеру.</p>
+                <br />
+                <h3>Описание вкуса</h3>
+                <p>Вкус насыщенный кисло-сладкий, с заметной освежающей кислотностью. Аромат вишнёвый, чистый, без посторонних оттенков. Мякоть сочная, средней плотности, хорошо отдаёт сок.</p>
+                <br />
+                <h3>Особенности</h3>
+                <ul>
+                    <li>Выраженный вкус с активной кислотностью</li>
+                    <li>Хорошая сочность и аромат</li>
+                    <li>Стабильные свойства при переработке</li>
+                </ul>
+                <br />
+                <h3>Рекомендации по использованию</h3>
+                <ul>
+                    <li>Джемы, варенье, конфитюры</li>
+                    <li>Компоты и напитки</li>
+                    <li>Начинки для выпечки</li>
+                    <li>Соусы и кулинарные заготовки</li>
+                </ul>
+                <br />
+                <p>Звёздочка — вишня для тех случаев, когда нужен яркий вкус и предсказуемый результат.</p>
+                `},
+            {
+                id: 5, name: 'Ревна', price: 800, type: 'Черешня', image: 'pics/revna.jpg', size: 'крупный', taste: 'сладкий, насыщенный', purpose: 'для всех видов переработки', fruit_weight: '4,7-7,7',
+                description: `
+                <h2>Revna</h2>
+                <p>Черешня сорта Ревна — один из самых популярных тёмноплодных сортов, ценимый за насыщенный вкус и товарный внешний вид. Подходит как для розницы, так и для профессионального сегмента.</p>
+                <br />
+                <h3>Описание вкуса</h3>
+                <p>Вкус сладкий, глубокий, с лёгкой фруктовой кислинкой, которая делает профиль более объёмным. Мякоть плотная, хрустящая, сочная. Кожица тёмная, почти чёрная, с выраженным глянцем.</p>
+                <br />
+                <h3>Особенности</h3>
+                <ul>
+                    <li>Высокая сладость с хорошим балансом</li>
+                    <li>Плотная, хрустящая текстура</li>
+                    <li>Отличная транспортабельность</li>
+                </ul>
+                <br />
+                <h3>Рекомендации по использованию</h3>
+                <ul>
+                    <li>Свежая реализация</li>
+                    <li>Фруктовые витрины</li>
+                    <li>Десерты и подача без переработки</li>
+                    <li>Премиальный сегмент HoReCa</li>
+                </ul>
+                <br />
+                <p>Ревна — черешня с характером: насыщенная, плотная и визуально эффектная.</p>
+                `},
+        ];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push({ ...product, quantity: 1 });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+            }
+        }
+
+        function renderProductPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+
+            const product = products.find(p => p.id === productId);
+
+            if (!product) {
+                document.getElementById('productPage').innerHTML = '<p>Товар не найден</p>';
+                return;
+            }
+
+            const pageHTML = `
+            <div class="catalog_JaS">
+                <p class="main_text_catalog">${product.name}</p>
+                <a href="catalog.html" class="catalog_href"> < В каталог</a>
+            </div>
+
+            <div class="product_page_wrapper">
+                <div class="container_card">
+                <img src="${product.image}" alt="${product.name}" />
+                    <div class="card_text">
+                    <h2>${product.name}</h2>
+                    <h2>${product.type}</h2>
+                        <div class="card_description">
+                            <p>Размер плода: ${product.size}</p>
+                            <br/>
+                            <p>Вкус: ${product.taste}</p>
+                            <br/>
+                            <p>Назначение: ${product.purpose}</p>
+                            <br/>
+                            <p>Вес плода: ~${product.fruit_weight} г</p>
+                        </div>
+                    <div class="card_price">
+                        <a class="to_cart" onclick="addToCart(${product.id})">Добавить в корзину</a>
+                        <p>${product.price.toLocaleString()}₽</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="card_description_text">
+                    ${product.description}
+                </div>
+            </div>
+            
+
+            `;
+            document.getElementById('productPage').innerHTML = pageHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductPage();
+            updateCartCount();
+        });
+
+
+        //смена темы
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('themeToggle');
+
+            const savedTheme = localStorage.getItem('siteTheme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else if (savedTheme === 'light') {
+                document.body.classList.remove('dark-theme');
+            } else if (systemDark) {
+                document.body.classList.add('dark-theme');
+                localStorage.setItem('siteTheme', 'dark')
+            }
+
+            themeToggle.addEventListener('click', function () {
+                if (document.body.classList.contains('dark-theme')) {
+                    document.body.classList.remove('dark-theme');
+                    localStorage.setItem('siteTheme', 'light');
+                } else {
+                    document.body.classList.add('dark-theme');
+                    localStorage.setItem('siteTheme', 'dark');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCountElement = document.getElementById('cartCount');
+
+            if (cartCountElement) {
+                cartCountElement.textContent = cart.length;
+            }
+        });
+
+    </script>
+
+    <header>
+        <h1 class="header_main_text">CHERRY?</h1>
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="SourCherry.html">Вишня</a>
+            <a href="SweetCherry.html">Черешня</a>
+            <a href="cart.html" id="cartLink">Корзина (<span id="cartCount">0</span>)</a>
+            <a href="info.html">О нас</a>
+        </nav>
+        <img src="pics/theme.png" alt="theme" id="themeToggle" />
+    </header>
+
+    <main class="page">
+        
+
+        <div class="no_product" id="productPage"></div>
+
+        <div class="background_layer">
+            <p class="background_text">BLOSSOM</p>
+        </div>
+
+        
+    </main>
+        <footer>
+            <p>© 2025 Все права не защищены. Запомните, носки пропадают не просто так, это маркетинг параллельной вселенной.</p>
+        </footer>
+</body>
+</html>
