@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Товар — CHERRY?</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('cherry-theme');
+        const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+        document.documentElement.style.colorScheme = 'light';
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header"><div class="shell header-inner"><a class="logo" href="index.html">CHERRY<span>?</span></a><nav class="main-nav" data-main-nav aria-label="Основная навигация"><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="info.html">О магазине</a></nav><div class="header-actions"><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Открыть меню">≡</button><button class="icon-button" type="button" data-theme-toggle><span data-theme-icon>◐</span></button><a class="cart-link" href="cart.html"><span class="cart-text">Корзина</span><span data-cart-count>0</span></a></div></div></header>
+  <main class="page-main" data-product-page></main>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="logo" href="index.html">CHERRY<span>?</span></a><p>Учебный проект интернет-магазина · редизайн 2026</p></div><div class="footer-links"><a href="catalog.html">Каталог</a><a href="info.html">О магазине</a><a href="cart.html">Корзина</a></div></div></footer>
+  <script src="assets/js/products.js"></script><script src="assets/js/common.js"></script><script src="assets/js/product.js"></script>
+</body>
+</html>
