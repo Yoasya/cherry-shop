@@ -27,4 +27,4 @@ HTML5 · CSS3 · JavaScript · DOM · LocalStorage · Responsive Design · GitHu
 
 ## Demo
 
-После публикации через GitHub Pages добавьте сюда ссылку на живую версию сайта.
+Ссылка на сайт: https://yoasya.github.io/cherry-shop/
